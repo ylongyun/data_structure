@@ -112,10 +112,9 @@ void find_data(LinkList* head, int data)
 {
 	LinkList* node;
 	node = head->next;
-	int i = 0, k = 0;
+	int k = 0;
 	while (node->next != NULL)
 	{
-		++i;
 		if (node->data == data)
 		{
 			++k;
@@ -126,6 +125,8 @@ void find_data(LinkList* head, int data)
 			node = node->next;
 		}
 	}
+	if (node->data = data)
+		k = 1;
 	if (k == 1)
 		printf("链表内有该元素");
 	else
