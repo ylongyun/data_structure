@@ -3,16 +3,17 @@
 
 typedef struct Node
 {
-	int data;//ÄÚÈÝ
-	struct Node* next;//ÏÂÒ»¸ö½ÚµãµÄµØÖ·
+	int data;//数据元素
+	struct Node* next;//下一个结点的地址
 
 }LinkList;
 
-LinkList* creatList(int n);//
-int find_data(LinkList* list, int num);//
-void add(LinkList* head, int num);//
-void delete(LinkList* head, int num);//
-void print(LinkList* list);
-int size(LinkList* head);
+LinkList* creatList(int n);//创建链表
+int find_order(LinkList* head, int num);//按顺序查找链表内元素
+void add(LinkList* head, int num);//插入一个节点
+void delete(LinkList* head, int num);//删除一个节点
+void print(LinkList* head);//输出链表
+int size(LinkList* head);//测量链表长度
+void finf_data(LinkList* head,int num);//按值查找链表内元素
 
 #endif //CORC___LINKLIST_H
