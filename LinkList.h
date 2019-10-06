@@ -15,5 +15,6 @@ void delete(LinkList* head, int num);//删除一个节点
 void print(LinkList* head);//输出链表
 int size(LinkList* head);//测量链表长度
 void finf_data(LinkList* head,int num);//按值查找链表内元素
+LinkList* copy(LinkList* head)//复制链表，返回所复制链表的头指针
 
 #endif //CORC___LINKLIST_H
