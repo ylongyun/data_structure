@@ -1,5 +1,10 @@
-#include<stdio.h>
-#include<stdlib.h>
+/*
+
+
+
+*/ 
+#include <stdio.h>
+#include <stdlib.h>
 typedef struct Node
 {
 	int order;
@@ -7,18 +12,28 @@ typedef struct Node
 	struct Node* next;
 
 }LinkList;
-int main()
+
+LinkList *create (int length)
 {
-	LinkList a1,a2,a3,a4,a5,a6,a7;
-	LinkList* head;
-	head = &a1;
-	a1.next = &a2;a2.next = &a3;a3.next = &a4;a4.next = &a5;a5.next = &a6;a6.next = &a7;a7.next = &a1;
-	a1.code = 3;a2.code = 1;a3.code = 7;a4.code = 2;a5.code = 4;a6.code = 8;a7.code = 4;
-	a1.order = 1;a2.order = 2;a3.order = 3;a4.order = 4;a5.order = 5;a6.order = 6;a7.order = 7;
-	yuesifu(head,20);
-	return 0;
+	int i;
+	LinkList *head,*node,*pre;
+	head=(LinkList*)malloc(sizeof(LinkList));
+	head->next=NULL;
+	pre=head;
+	for (i=1;i<=length;i++)
+	{
+		node=(LinkList*)malloc(sizeof(LinkList));
+		node->order=i;
+		scanf("%d",&node->code);
+		pre->next=node;
+		pre=node;
+		node->next=NULL;
+	}
+	node->next=head->next;
+	return head->next;
 }
-void yuesifu(LinkList* head,int m)
+
+int yuesefu(LinkList* head,int m)
 {
 	int i;
 	LinkList* pre,* node;
@@ -48,5 +63,13 @@ void yuesifu(LinkList* head,int m)
 		m = node->code;
 	}
 	printf("%d\n",head->order);
+	return 0;
 }
 
+int main()
+{
+	LinkList* head;
+	head=create(7);
+	yuesefu(head,20);
+	return 0;
+}
